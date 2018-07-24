@@ -45,12 +45,12 @@ For example, if you wanted to backup every 8 hours to the s3 bucket located in t
 
 `docker run --name ghost-backup-s3 -d -v ghost_data:/data -e BACKUP_INTERVAL=8h -e AWS_DEFAULT_REGION=us-east-1 -e BACKUP_ONLY=false edzillion/ghost-backup-s3 s3://us-east-1-bucket/folder`
 
-> This example is for Ghost using sqlite. If you're using mysql/mariadb just add the linked mysql containers as described above.
+> This example is for Ghost using sqlite. If you're using mysql just add the linked mysql containers as described above.
 
 ### Other Info
 When using sqlite, the backup/restore is handled using the [command line shell] of the [online backup API].
 
-When using mysql/mariadb, the backup/restore is handled using mysqldump. You should use InnoDB tables for [online backup].
+When using mysql, the backup/restore is handled using mysqldump. You should use InnoDB tables for [online backup].
 
  [ghost-backup-s3]: https://github.com/edzillion/ghost-backup-s3
  [docker]: https://www.docker.com/
@@ -58,7 +58,6 @@ When using mysql/mariadb, the backup/restore is handled using mysqldump. You sho
  [ghost-backup]: https://github.com/bennetimo/ghost-backup
  [docker-s3-volume]: https://github.com/elementar/docker-s3-volume
  [configuration]: http://support.ghost.org/config/#database
- [mariadb]: https://hub.docker.com/_/mariadb/
  [command line shell]: https://www.sqlite.org/cli.html
  [online backup API]: https://www.sqlite.org/backup.html
  [online backup]: https://dev.mysql.com/doc/refman/5.5/en/mysqldump.html
