@@ -80,7 +80,9 @@ function idle {
   done
 }
 
+echo "ghost-backup-s3 initialising..."
 if [ "$BACKUP_ONLY" == "false" ]; then
+  echo "Initial restore..."
   restore
 else
   echo "BACKUP_ONLY=true so skipping initial restore"
