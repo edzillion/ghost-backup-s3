@@ -1,0 +1,7 @@
+- [x] sqlite variant
+- [ ] test mysql variant
+- [ ] Update readme
+- [ ] Documentation
+- [ ] bring blog_data volume inside container
+- [ ] Improve logging
+- [ ] Provision s3 with terraform?
