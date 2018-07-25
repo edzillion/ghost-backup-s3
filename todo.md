@@ -1,6 +1,6 @@
 - [x] sqlite variant
 - [ ] test mysql variant
-- [ ] Update readme
+- [x] readme
 - [ ] Documentation
 - [ ] bring blog_data volume inside container
 - [ ] Improve logging
