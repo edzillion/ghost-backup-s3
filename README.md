@@ -8,6 +8,7 @@ By default it will create a backup of the ghost content files (images, themes, a
 Inspired by [ghost-backup] and [docker-s3-volume] (thanks y'all!)
 
 **Note:** default behaviour is only to backup (on a schedule and when the container is shut down). To enable restore, you need to set `BACKUP_ONLY=true`
+
 > **Warning** `BACKUP_ONLY=false` will overwrite the current ghost installation. This is so that we can automate server provisioning scripts to restore ghost fully on boot.
 
 ### Quick Start
@@ -26,14 +27,14 @@ Run ghost on port 80 and set it to use the ghost_data volume:
 
 `docker run -d --name blog -v ghost_data:/var/lib/ghost/content -p 80:2368 ghost`
 
-Then run ghost-backup-s3 and link it to the same volume, replacing `s3://your-bucket-here/folder` with your s3 bucket:
+Then run ghost-backup-s3 and mount the same volume, replacing `s3://your-bucket-here/folder` with your s3 bucket:
 
 `docker run -d --name ghost-backup-s3 -v ghost_data:/data edzillion/ghost-backup-s3 s3://your-bucket-here/folder`
 
 That's it! This will create and run a container named 'ghost-backup-s3' which will backup your files and db to s3 every day.
 
 ### Advanced Configuration
-ghost-backup has a number of options which can be configured as you need. 
+ghost-backup-s3 has a number of options which can be configured as you need. 
 
 | Environment Variable  | Default       | Meaning           |
 | --------------------- | ------------- | ----------------- | 
