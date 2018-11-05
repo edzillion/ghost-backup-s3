@@ -2,6 +2,6 @@
 - [ ] test mysql variant
 - [x] readme
 - [ ] Documentation
-- [ ] bring blog_data volume inside container
+- [ ] Bring blog_data volume inside container
 - [ ] Improve logging
 - [ ] Provision s3 with terraform?
